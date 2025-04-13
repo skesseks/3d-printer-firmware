@@ -140,7 +140,7 @@
 
 // Name displayed in the LCD "Ready" message and Info menu
 //#define CUSTOM_MACHINE_NAME "3D Printer"
-#define CUSTOM_MACHINE_NAME "The Bastard"
+  #define CUSTOM_MACHINE_NAME "The Bastard is"
 
 // Printer's unique ID, used by some programs to differentiate between machines.
 // Choose your own or use a service like https://www.uuidgenerator.net/version4
@@ -1513,11 +1513,11 @@
  *     |    [-]    |
  *     O-- FRONT --+
  */
-#define NOZZLE_TO_PROBE_OFFSET {-17,-46,0}  /*{ 10, 10, 0 }*/
+#define NOZZLE_TO_PROBE_OFFSET {-17,-46,-3.00}  /*{ 10, 10, 0 }*/
 
 // Most probes should stay away from the edges of the bed, but
 // with NOZZLE_AS_PROBE this can be negative for a wider probing area.
-#define PROBING_MARGIN 10
+#define PROBING_MARGIN 30
 
 // X and Y axis travel speed (mm/min) between probes
 #define XY_PROBE_FEEDRATE (133*60)
@@ -1573,7 +1573,7 @@
  * A total of 2 does fast/slow probes with a weighted average.
  * A total of 3 or more adds more slow probes, taking the average.
  */
-//#define MULTIPLE_PROBING 2
+#define MULTIPLE_PROBING 2
 //#define EXTRA_PROBING    1
 
 /**
@@ -1923,14 +1923,14 @@
  * leveling immediately after G28.
  */
 //#define RESTORE_LEVELING_AFTER_G28
-//#define ENABLE_LEVELING_AFTER_G28
+#define ENABLE_LEVELING_AFTER_G28
 
 /**
  * Auto-leveling needs preheating
  */
-//#define PREHEAT_BEFORE_LEVELING
+#define PREHEAT_BEFORE_LEVELING
 #if ENABLED(PREHEAT_BEFORE_LEVELING)
-  #define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
+  //#define LEVELING_NOZZLE_TEMP 120   // (°C) Only applies to E0 at this time
   #define LEVELING_BED_TEMP     50
 #endif
 
@@ -2265,18 +2265,6 @@
 #define PREHEAT_3_TEMP_BED    60
 #define PREHEAT_3_TEMP_CHAMBER 35
 #define PREHEAT_3_FAN_SPEED     0 // Value from 0 to 255
-
-#define PREHEAT_4_LABEL       "HOTEND"
-#define PREHEAT_4_TEMP_HOTEND 200
-#define PREHEAT_4_TEMP_BED    0
-#define PREHEAT_4_TEMP_CHAMBER 35
-#define PREHEAT_4_FAN_SPEED     0 // Value from 0 to 255
-
-#define PREHEAT_5_LABEL       "BED"
-#define PREHEAT_5_TEMP_HOTEND 0
-#define PREHEAT_5_TEMP_BED    60
-#define PREHEAT_5_TEMP_CHAMBER 35
-#define PREHEAT_5_FAN_SPEED     0 // Value from 0 to 255
 
 /**
  * @section nozzle park
